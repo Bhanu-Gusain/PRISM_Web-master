@@ -1,4 +1,4 @@
-package com.ttn.WebAutomation.tests.msil;
+package com.ttn.WebAutomation.tests.NW;
 import java.util.Hashtable;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;

@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v102.emulation.Emulation;
+import org.openqa.selenium.devtools.v115.emulation.Emulation;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -190,11 +190,12 @@ public class BrowserFactory {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("window-size=1200x600");
         options.addArguments("--no-sandbox");
+        options.addArguments("--incognito");
         options.addArguments("--disable-dev-shm-usage");
 //        Map<String, Object> prefs = new HashMap<String, Object>();
 //        prefs.put("profile.managed_default_content_settings.geolocation", locationParam);
 //        options.setExperimentalOption("prefs", prefs);
-        driver = WebDriverManager.chromedriver().capabilities(options).create();
+        driver = new ChromeDriver(options);
         
         
         Reporter.log("Chrome Launched in " + BaseLib.OS, true);

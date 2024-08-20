@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="false" thread-count="2">
-	 <listeners>
+<suite name="Suite">
+	<listeners>
 		<listener
-				class-name="com.ttn.WebAutomation.listeners.MyProjectListener" />
+			class-name="com.ttn.WebAutomation.listeners.MyProjectListener" />
 	</listeners>
-	
-	<parameter name="Environment" value="prod" />
+	<parameter name="Environment" value="uat" />
 	<parameter name="browser" value="chrome" />
-	
 	<!-- <test name="Test safari">
 		
 		<parameter name="packageName" value="Running on safari" />
@@ -20,14 +18,17 @@
 
 		</classes>
 	</test> -->
-	
 	<test name="Test Chrome">
 		<parameter name="packageName" value="Running on chrome" />
-		<parameter name="gridBrowser" value="chrome"/>
-		
+		<parameter name="gridBrowser" value="chrome" />
 		<classes>
-			<class name="com.ttn.WebAutomation.tests.msil.LoginTest" />
-			<!--<class name="com.ttn.WebAutomation.tests.msil.HomePageTest" />-->
+			<class name="com.ttn.WebAutomation.tests.NW.LoginTest"/>
+			<!-- <class name="com.ttn.WebAutomation.tests.NW.HomePageTest" />
+			<class name="com.ttn.WebAutomation.tests.NW.SearchResultFuncTest" />-->
+			<!--<class name="com.ttn.WebAutomation.tests.NW.UEVTest" />-->
+			<!--<class name="com.ttn.WebAutomation.tests.NW.LogTicketTest" />/>-->
+			<!-- <class name="com.ttn.WebAutomation.tests.NW.PostTest" />-->
+
 		</classes>
 	</test>
 </suite> <!-- Suite -->
